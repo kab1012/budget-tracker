@@ -20,6 +20,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_swagger.views import get_swagger_view
 from api.views import CategoryViewSet, TransactionViewSet, BudgetViewSet
+from users.views import UserViewSet
 
 schema_view = get_swagger_view(title='Budget Tracker API')
 
@@ -27,6 +28,7 @@ router = DefaultRouter()
 router.register(r'categories', CategoryViewSet, basename='category')
 router.register(r'transactions', TransactionViewSet, basename='transaction')
 router.register(r'budgets', BudgetViewSet, basename='budget')
+router.register(r'users', UserViewSet, basename='user')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
